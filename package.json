@@ -1,14 +1,32 @@
 {
-  "name": "dbfs-api",
-  "version": "1.0.0",
-  "description": "DBFS REST API wrapper for Node",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "dbfs"
-  ],
-  "author": "saikksub <saikksub@gmail.com>",
-  "license": "MIT"
+	"name": "dbfs-api",
+	"version": "0.0.0",
+	"description": "DBFS REST API wrapper for Node",
+	"license": "MIT",
+	"repository": "saikksub/dbfs-api",
+	"author": {
+		"name": "Kiran Sai Subramanyam K",
+		"email": "saikksub@gmail.com",
+		"url": "saikksub.dev"
+	},
+	"type": "module",
+	"exports": "./index.js",
+	"engines": {
+		"node": ">=16"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"dbfs",
+		"databricks"
+	],
+	"dependencies": {},
+	"devDependencies": {
+		"ava": "^5.3.0",
+		"xo": "^0.54.2"
+	}
 }
