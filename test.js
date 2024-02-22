@@ -15,7 +15,7 @@ test('Connect and get status', async t => {
 	t.is(rootDirStatus.is_dir, true);
 });
 
-test('Llist files from root', async t => {
+test('List workspaces on the root', async t => {
 	const listRootDir = await getList('/');
 	t.is(Array.isArray(listRootDir.files), true);
 });
