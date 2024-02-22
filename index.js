@@ -6,6 +6,8 @@ export {getList} from './lib/dbfs/get-list.js';
 
 export {createDirectory} from './lib/dbfs/create-directory.js';
 
+export {deleteDirectory} from './lib/dbfs/delete-directory.js';
+
 export const connect = async function ({url, token}) {
 	try {
 		axios.defaults.baseURL = url;
