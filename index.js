@@ -1,7 +1,13 @@
-export default function unicornFun(input, {postfix = 'rainbows'} = {}) {
-	if (typeof input !== 'string') {
-		throw new TypeError(`Expected a string, got ${typeof input}`);
-	}
+import axios from 'axios';
 
-	return `${input} & ${postfix}`;
-}
+export {getStatus} from './lib/get-status.js';
+
+export const connect = async function ({url, token}) {
+	try {
+		axios.defaults.baseURL = url;
+		axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+		return true;
+	} catch {
+		return false;
+	}
+};
