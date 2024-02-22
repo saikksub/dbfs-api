@@ -8,6 +8,10 @@ export {createDirectory} from './lib/dbfs/create-directory.js';
 
 export {deleteDirectory} from './lib/dbfs/delete-directory.js';
 
+export {deleteFile} from './lib/dbfs/delete-file.js';
+
+export {uploadFile} from './lib/dbfs/upload-file.js';
+
 export const connect = async function ({url, token}) {
 	try {
 		axios.defaults.baseURL = url;
