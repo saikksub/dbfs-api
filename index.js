@@ -12,6 +12,12 @@ export {deleteFile} from './lib/dbfs/delete-file.js';
 
 export {uploadFile} from './lib/dbfs/upload-file.js';
 
+export {openStream} from './lib/dbfs/open-stream.js';
+
+export {addBlock} from './lib/dbfs/add-block.js';
+
+export {closeStream} from './lib/dbfs/close-stream.js';
+
 export const connect = async function ({url, token}) {
 	try {
 		axios.defaults.baseURL = url;

@@ -36,10 +36,10 @@ test('Create and delete a new folder under root dir', async t => {
 	const filePath = `/${newFolderName}`;
 
 	const responseCreateDir = await createDirectory(filePath);
-	t.is({}.constructor === responseCreateDir.constructor, true);
+	t.is(responseCreateDir, true);
 
 	const responseDeleteDir = await deleteDirectory(filePath);
-	t.is({}.constructor === responseDeleteDir.constructor, true);
+	t.is(responseDeleteDir, true);
 });
 
 test('Upload a file into a new folder and then delete it', async t => {
@@ -50,35 +50,35 @@ test('Upload a file into a new folder and then delete it', async t => {
 
 	// Upload first file
 	const responseCreateDir1 = await createDirectory(dirPath1);
-	t.is({}.constructor === responseCreateDir1.constructor, true);
+	t.is(responseCreateDir1, true);
 
-	const fileData1 = await fs.readFile(process.env.FILE_ABS_PATH_4MB);
+	const fileData1 = await fs.readFile(process.env.FILE_ABS_PATH_500KB);
 	const fileDataBase64One = fileData1.toString('base64');
-	const filePath1 = path.join(dirPath1, path.basename(process.env.FILE_ABS_PATH_4MB));
+	const filePath1 = path.join(dirPath1, path.basename(process.env.FILE_ABS_PATH_500KB));
 
 	const responseCreateFile1 = await uploadFile(filePath1, fileDataBase64One);
-	t.is({}.constructor === responseCreateFile1.constructor, true);
+	t.is(responseCreateFile1, true);
 
 	// Upload second file
 	const responseCreateDir2 = await createDirectory(dirPath2);
-	t.is({}.constructor === responseCreateDir2.constructor, true);
+	t.is(responseCreateDir2, true);
 
-	const fileData2 = await fs.readFile(process.env.FILE_ABS_PATH_4MB);
+	const fileData2 = await fs.readFile(process.env.FILE_ABS_PATH_100KB);
 	const fileDataBase64Two = fileData2.toString('base64');
-	const filePath2 = path.join(dirPath2, 'file.pdf');
+	const filePath2 = path.join(dirPath2, path.basename(process.env.FILE_ABS_PATH_100KB));
 
 	const responseCreateFile2 = await uploadFile(filePath2, fileDataBase64Two);
-	t.is({}.constructor === responseCreateFile2.constructor, true);
+	t.is(responseCreateFile2, true);
 
 	// Delete first file
 	const responseDeleteFile1 = await deleteFile(filePath1);
-	t.is({}.constructor === responseDeleteFile1.constructor, true);
+	t.is(responseDeleteFile1, true);
 
 	// Delete first directory
 	const responseDeleteDir1 = await deleteDirectory(dirPath1);
-	t.is({}.constructor === responseDeleteDir1.constructor, true);
+	t.is(responseDeleteDir1, true);
 
 	// Delete second dir
 	const responseDeleteDir2 = await deleteDirectory(dirPath2);
-	t.is({}.constructor === responseDeleteDir2.constructor, true);
+	t.is(responseDeleteDir2, true);
 });
