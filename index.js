@@ -18,6 +18,13 @@ export {addBlock} from './lib/dbfs/add-block.js';
 
 export {closeStream} from './lib/dbfs/close-stream.js';
 
+/**
+ * Connects to the Databricks filesystem with the given URL and token.
+ * @param {Object} config Configuration for connecting to the database.
+ * @param {string} config.url The URL of the database filesystem.
+ * @param {string} config.token Authorization token for the database filesystem.
+ * @returns {Promise<boolean>} Promise that resolves to true if connection is successful, false otherwise.
+ */
 export const connect = async function ({url, token}) {
 	try {
 		axios.defaults.baseURL = url;
