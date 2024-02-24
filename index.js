@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {getStatus} from './lib/dbfs/get-status.js';
 
 export {getStatus} from './lib/dbfs/get-status.js';
 
@@ -29,7 +30,9 @@ export const connect = async function ({url, token}) {
 	try {
 		axios.defaults.baseURL = url;
 		axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-		return true;
+
+		const response = await getStatus('/');
+		return response?.path === '/' && response?.is_dir === true;
 	} catch {
 		return false;
 	}
