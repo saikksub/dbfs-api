@@ -1,6 +1,6 @@
 {
 	"name": "dbfs-api",
-	"version": "0.0.0",
+	"version": "1.0.0-beta.1",
 	"description": "DBFS REST API wrapper for Node",
 	"license": "MIT",
 	"repository": "saikksub/dbfs-api",
