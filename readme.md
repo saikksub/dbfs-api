@@ -1,4 +1,5 @@
 # DBFS API Library
+`Beta release only. It is not recommended for use in production environments.`
 
 This library provides a simple interface to interact with a Databricks Filesystem (DBFS). It enables users to perform a variety of file system operations such as getting the status of a file or directory, listing contents, creating and deleting directories, uploading files, and managing streams.
 
