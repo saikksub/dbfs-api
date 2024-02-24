@@ -7,6 +7,7 @@ This library provides a simple interface to interact with a Databricks Filesyste
 ```bash
 npm install dbfs-api
 ```
+> This npm library is currently in beta release. It is not recommended for use in production environments. An official stable version will be released soon.
 
 ## Usage
 
